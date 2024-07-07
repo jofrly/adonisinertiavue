@@ -2,18 +2,18 @@
   <Head title="All posts" />
 
   <div class="max-w-[800px] mx-auto py-8">
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-4">
       <h1 class="h1 mb-2">All Posts</h1>
 
-      <button @click="openCreateDialog" class="btn-primary">New</button>
+      <button @click="openCreateDialog" class="btn-primary" role="button">New</button>
     </div>
 
     <div class="flex flex-col gap-4 mb-2">
-      <div v-for="post in posts" :key="post.id" class="shadow p-4 rounded-md border relative">
+      <div v-for="post in posts" :key="post.id" class="shadow p-4 rounded-md border relative" aria-label="post">
         <h2 class="h2">{{ post.title }}</h2>
         <p>{{ post.description || '-' }}</p>
-        <button @click="openUpdateDialog(post)" class="absolute top-4 right-4">✎</button>
-        <button @click="deletePost(post)" class="absolute bottom-4 right-4 text-red-700">✕</button>
+        <button @click="openUpdateDialog(post)" role="button" aria-label="edit" class="absolute top-4 right-12">✎</button>
+        <button @click="deletePost(post)" role="button" aria-label="delete" class="absolute top-4 right-4 text-red-700">✕</button>
       </div>
     </div>
 

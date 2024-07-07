@@ -1,5 +1,5 @@
 <template>
-  <dialog ref="dialog" class="p-8 shadow-lg rounded-lg w-full max-w-96">
+  <dialog ref="dialog" class="p-8 shadow-lg rounded-lg w-full max-w-96" aria-label="create-post-dialog">
     <div class="flex justify-between items-start mb-4">
       <h2 class="h2">Create Post</h2>
       <button @click="close" class="text-red-700">✕</button>
@@ -10,6 +10,7 @@
         <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
         <input
           type="text"
+          name="title"
           id="title"
           placeholder="Title"
           required
@@ -23,6 +24,7 @@
         <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
         <textarea
           type="text"
+          name="description"
           id="description"
           placeholder="Description"
           v-model="form.description"
@@ -31,7 +33,7 @@
         <p class="mt-2 text-xs text-red-600" v-if="errors.description">{{ errors.description.join(', ') }}</p>
       </div>
 
-      <button type="submit" class="btn-primary w-full">Create</button>
+      <button type="submit" role="button" class="btn-primary w-full">Create</button>
     </form>
   </dialog>
 </template>

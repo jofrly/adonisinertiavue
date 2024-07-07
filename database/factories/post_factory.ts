@@ -3,6 +3,9 @@ import Post from '#models/post'
 
 export const PostFactory = factory
   .define(Post, async ({ faker }) => {
-    return {}
+    return {
+      title: faker.lorem.sentence(),
+      description: faker.lorem.sentences(10),
+    }
   })
   .build()

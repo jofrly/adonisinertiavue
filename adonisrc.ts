@@ -37,7 +37,7 @@ export default defineConfig({
     () => import('@adonisjs/cors/cors_provider'),
     () => import('@adonisjs/lucid/database_provider'),
     () => import('@adonisjs/auth/auth_provider'),
-    () => import('@adonisjs/inertia/inertia_provider')
+    () => import('@adonisjs/inertia/inertia_provider'),
   ],
 
   /*
@@ -61,6 +61,11 @@ export default defineConfig({
   */
   tests: {
     suites: [
+      {
+        files: ['tests/browser/**/*.spec(.ts|.js)'],
+        name: 'browser',
+        timeout: 10000,
+      },
       {
         files: ['tests/unit/**/*.spec(.ts|.js)'],
         name: 'unit',
