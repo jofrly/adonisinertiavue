@@ -1,36 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
+.h1 {
+  @apply text-3xl font-black;
 }
 
-html,
-body,
-#app {
-  background-color: #F7F8FA;
-  font-family: 'Poppins', sans-serif;
-  color: #46444c;
-  height: 100%;
-  width: 100%;
+.h2 {
+  @apply text-2xl font-black;
 }
 
-.title {
-  font-size: 42px;
-  font-weight: 500;
-  color: #5a45ff;
+.link {
+  @apply text-blue-500 underline;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+.btn-primary {
+  @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800;
 }
 
-a {
-  text-decoration: underline;
-  color: #5a45ff;
+.input {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
 }
